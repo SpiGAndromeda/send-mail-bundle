@@ -7,7 +7,7 @@
 
     <services>
         <service id="spigandromeda.send_mail_service" class="SpiGAndromeda\SendMailBundle\Services\SendMailService">
-            <argument key="$mailer" type="service" id="swiftmailer.mailer"></argument>
+            <argument key="$mailer" type="service" id="swiftmailer.mailer" />
             <argument key="$config">%spigandromeda_send_mail.config%</argument>
         </service>
     </services>

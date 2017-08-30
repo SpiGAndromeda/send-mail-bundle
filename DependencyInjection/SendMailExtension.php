@@ -1,19 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: marti
- * Date: 30.08.2017
- * Time: 15:47
- */
 
 namespace SpiGAndromeda\SendMailBundle\DependencyInjection;
-
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
+/**
+ * Class SendMailExtension
+ * @package SpiGAndromeda\SendMailBundle\DependencyInjection
+ */
 class SendMailExtension extends Extension
 {
     /**

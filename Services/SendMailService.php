@@ -1,16 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: marti
- * Date: 30.08.2017
- * Time: 14:15
- */
 
 namespace SpiGAndromeda\SendMailBundle\Services;
 
-
 use PhpImap\Mailbox;
 
+/**
+ * Class SendMailService
+ * @package SpiGAndromeda\SendMailBundle\Services
+ */
 class SendMailService
 {
     protected $config = array();
@@ -34,6 +31,9 @@ class SendMailService
         $this->config = $config;
     }
 
+    /**
+     * @param \Swift_Message $message
+     */
     public function sendMail(\Swift_Message $message)
     {
         $this->mailer->send($message);

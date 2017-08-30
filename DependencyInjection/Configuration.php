@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: marti
- * Date: 30.08.2017
- * Time: 15:29
- */
 
 namespace SpiGAndromeda\SendMailBundle\DependencyInjection;
 
@@ -12,8 +6,15 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
+/**
+ * Class Configuration
+ * @package SpiGAndromeda\SendMailBundle\DependencyInjection
+ */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * @return TreeBuilder
+     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();

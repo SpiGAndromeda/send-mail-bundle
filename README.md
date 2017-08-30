@@ -1,7 +1,8 @@
 SendMailBundle
 =====
-[![License](https://poser.pugx.org/spigandromeda/send-mail-bundle/license.png)](https://packagist.org/packages/spigandromeda/send-mail-bundle)
-[![Total Downloads](https://poser.pugx.org/webeith/send-mail-bundle/downloads.png)](https://packagist.org/packages/spigandromeda/send-mail-bundle)
+
+[![License](https://poser.pugx.org/spigandromeda/send-mail-bundle/license)](https://packagist.org/packages/spigandromeda/send-mail-bundle)
+[![Total Downloads](https://poser.pugx.org/spigandromeda/send-mail-bundle/downloads)](https://packagist.org/packages/spigandromeda/send-mail-bundle)
 
 Usage Example
 -------------
