@@ -9,7 +9,10 @@
 namespace SpiGAndromeda\SendMailBundle\DependencyInjection;
 
 
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 class SendMailExtension extends Extension
 {
@@ -19,18 +22,11 @@ class SendMailExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, new FileLocator(dirname(__DIR__).'/Resources/config'));
-        $loader->load('services.xml');
-
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $container->setParameter('spigandromeda_send_mail.config', $config);
 
-        $def = $container->getDefinition('acme.social.twitter_client');
-        $def->replaceArgument(0, $config['host']);
-        $def->replaceArgument(0, $config['port']);
-        $def->replaceArgument(0, $config['encryption']);
-        $def->replaceArgument(0, $config['sent_items_folder']);
-        $def->replaceArgument(0, $config['login']);
-        $def->replaceArgument(0, $config['password']);
+        $loader = new XmlFileLoader($container, new FileLocator(dirname(__DIR__).'/Resources/config'));
+        $loader->load('services.xml');
     }
 }

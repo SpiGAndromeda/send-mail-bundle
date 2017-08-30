@@ -13,15 +13,25 @@ use PhpImap\Mailbox;
 
 class SendMailService
 {
-    protected $cofig = array();
+    protected $config = array();
 
     /**
      * @var \Swift_Mailer $mailer
      */
     protected $mailer;
 
-    public function __construct(\Swift_Mailer $mailer)
+    /**
+     * SendMailService constructor.
+     *
+     * @param array $config
+     * @param \Swift_Mailer $mailer
+     */
+    public function __construct(\Swift_Mailer $mailer,array $config)
     {
+        $this->mailer = $mailer;
+
+        $config['path'] = "{" . $config['host'] . ":" . $config['port'] . "/imap/" . $config["encryption"] . "}" . $config['sent_items_folder'];
+        $this->config = $config;
     }
 
     public function sendMail(\Swift_Message $message)
@@ -29,9 +39,9 @@ class SendMailService
         $this->mailer->send($message);
 
         $mailbox = new Mailbox(
-            $config['imapPath'],
-            $config['imapLogin'],
-            $config['imapPassword']);
+            $this->config['path'],
+            $this->config['login'],
+            $this->config['password']);
 
         $imapStream = $mailbox->getImapStream();
         imap_append($imapStream,$mailbox->getImapPath(),$message->toString() . "\r\n","\\Seen");

@@ -6,13 +6,9 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="spigandromeda.send_mail.services" class="SpiGAndromeda\SendMailBundle\Services\SendMailService">
-            <argument></argument>
-            <argument></argument>
-            <argument></argument>
-            <argument></argument>
-            <argument></argument>
-            <argument></argument>
+        <service id="spigandromeda.send_mail_service" class="SpiGAndromeda\SendMailBundle\Services\SendMailService">
+            <argument key="$mailer" type="service" id="swiftmailer.mailer"></argument>
+            <argument key="$config">%spigandromeda_send_mail.config%</argument>
         </service>
     </services>
 </container>

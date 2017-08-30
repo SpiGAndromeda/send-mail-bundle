@@ -8,8 +8,8 @@
 
 namespace SpiGAndromeda\SendMailBundle\DependencyInjection;
 
-
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
@@ -29,7 +29,6 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->integerNode('port')
                     ->isRequired()
-                    ->cannotBeEmpty()
                     ->defaultValue(993)
                 ->end()
                 ->enumNode('encryption')

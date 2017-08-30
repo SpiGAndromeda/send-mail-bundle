@@ -2,7 +2,7 @@
 
 namespace SpiGAndromeda\SendMailBundle;
 
-use Sensio\Bundle\GeneratorBundle\Model\Bundle;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * Class SendMailBundle
