@@ -1,7 +1,7 @@
 {
   "name": "spigandromeda/send-mail-bundle",
   "type": "symfony-bundle",
-  "description": "Mail bundle for Symfony 3 to send mails via SMTP and place a copy in a predefined folder",
+  "description": "Mail bundle for Symfony 3 to send mails via SMTP and place a copy in a predefined folder via IMAP",
   "keywords": [
     "imap",
     "smtp",
